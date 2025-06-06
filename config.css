@@ -1,94 +1,166 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    background-color: #222;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .container {
-    display: flex;
-    height: calc(100vh - 100px);
-    padding: 20px;
-    gap: 20px;
-  }
-  
-  .left, .right {
-    flex: 1;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .left h2, .right h2 {
-    margin-top: 0;
-  }
-  
-  .botones {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .botones button {
-    margin: 5px;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .botones .rojo {
-    background-color: red;
-  }
-  
-  .botones .verde {
-    background-color: green;
-  }
-  
-  .botones .amarillo {
-    background-color: orange;
-  }
-  
-  .botones .negro {
-    background-color: black;
-  }
-  
-  .semaforo {
-    width: 100px;
-    margin: 20px auto;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  
-  .luz {
-    width: 60px;
-    height: 60px;
-    margin: 15px auto;
-    border-radius: 50%;
-    background-color: #111;
-    box-shadow: inset 0 0 10px #000;
-    transition: background-color 0.3s;
-  }
-  
-  .rojo.encendido {
-    background-color: red;
-  }
-  
-  .amarillo.encendido {
-    background-color: yellow;
-  }
-  
-  .verde.encendido {
-    background-color: limegreen;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 100px);
+  padding: 20px;
+  gap: 20px;
+}
+
+.left, .right {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.left h2, .right h2 {
+  margin-top: 0;
+}
+
+.botones {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.botones button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.botones .rojo {
+  background-color: red;
+}
+
+.botones .verde {
+  background-color: green;
+}
+
+.botones .amarillo {
+  background-color: orange;
+}
+
+.botones .negro {
+  background-color: black;
+}
+
+.semaforo {
+  width: 100px;
+  margin: 20px auto;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.luz {
+  width: 60px;
+  height: 60px;
+  margin: 15px auto;
+  border-radius: 50%;
+  background-color: #111;
+  box-shadow: inset 0 0 10px #000;
+  transition: background-color 0.3s;
+}
+
+.rojo.encendido {
+  background-color: red;
+}
+
+.amarillo.encendido {
+  background-color: yellow;
+}
+
+.verde.encendido {
+  background-color: limegreen;
+}
+
+/* ======================== */
+/* Ventilador profesional   */
+/* ======================== */
+
+.ventilador-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.fan {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  margin: 20px auto;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  background: radial-gradient(circle, #b0bec5 0%, #90a4ae 100%);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.blade {
+  width: 12px;
+  height: 70px;
+  background-color: #0277bd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Centro del ventilador */
+.fan::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #263238;
+  border: 3px solid #90a4ae;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.datos {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.datos h3 {
+  margin: 10px 0;
+}
+
+.datos button {
+  padding: 8px 14px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
