@@ -164,3 +164,55 @@ header {
   font-weight: bold;
   margin-top: 10px;
 }
+
+/* ======================== */
+/* Responsive para móviles   */
+/* ======================== */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  .botones button {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  .semaforo {
+    width: 80px;
+    padding: 15px;
+  }
+
+  .luz {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fan {
+    width: 100px;
+    height: 100px;
+  }
+
+  .blade {
+    height: 50px;
+  }
+
+  .datos h3 {
+    font-size: 16px;
+  }
+
+  .datos p {
+    font-size: 14px;
+  }
+}
